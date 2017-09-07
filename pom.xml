@@ -388,13 +388,14 @@
                 <version>${jqassistant.version}</version>
                 <executions>
                     <execution>
+                        <id>default-cli</id>
                         <goals>
                             <goal>scan</goal>
                             <goal>analyze</goal>
                         </goals>
                         <configuration>
                             <failOnSeverity>CRITICAL</failOnSeverity>
-                            <warnOnSeverity>INFO</warnOnSeverity>
+                            <warnOnSeverity>MAJOR</warnOnSeverity>
                             <!--
                             <groups>
                                 <group>default</group>
