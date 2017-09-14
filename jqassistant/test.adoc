@@ -45,9 +45,12 @@ WHERE
 WITH
   artifact, type
 MATCH
-  (test:Test:Class)-[:DEPENDS_ON*0..1]->(type)
+  (test:Class)-[:EXTENDS|IMPLEMENTS*0..]->(:Test:Class)-[:DEPENDS_ON*0..1]->(abstractType:Type)<-[:EXTENDS|IMPLEMENTS*0..]-(type:Type),
+  (:Artifact)-[:CONTAINS]->(abstractType)
+WHERE NOT
+  (has(test.abstract) and test.abstract)
 RETURN
-  artifact.name, test.fqn as Test, collect(type.fqn) as ModifiedTypes
+  artifact.name as Artifact, test.fqn as Test, collect(type.fqn) as ModifiedTypes
 ORDER BY
-  size(ModifiedTypes) desc
+  Artifact, size(ModifiedTypes) desc, Test
 ----
