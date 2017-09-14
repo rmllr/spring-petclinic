@@ -50,7 +50,7 @@ MATCH
 WHERE NOT
   (has(test.abstract) and test.abstract)
 RETURN
-  artifact.name as Artifact, test.fqn as Test, collect(type.fqn) as ModifiedTypes
+  artifact.name as Artifact, test.fqn as Test, type.fqn as ModifiedTypes
 ORDER BY
   Artifact, size(ModifiedTypes) desc, Test
 ----
