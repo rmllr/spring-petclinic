@@ -394,7 +394,7 @@
                         </goals>
                         <configuration>
                             <failOnSeverity>CRITICAL</failOnSeverity>
-                            <warnOnSeverity>INFO</warnOnSeverity>
+                            <warnOnSeverity>MINOR</warnOnSeverity>
                             <!--
                             <groups>
                                 <group>default</group>

@@ -1,15 +1,19 @@
 [[test:Default]]
-[role=group,includesConstraints="junit4:IgnoreWithoutMessage,assertj:TestMethodWithoutAssertion"]
+[role=group,includesConstraints="test:TestMethodWithoutAssertion,junit4:IgnoreWithoutMessage",includesConcepts="test:TestAffectedByLastCommit"]
 == Tests
 
 The following test rules apply:
 
-- <<assertj:TestMethodWithoutAssertion>>
+- <<test:TestMethodWithoutAssertion>>
 - All @Ignore annotations must provide a message
+
+The following reports are created:
+
+- <<test:TestAffectedByLastCommit>>
 
 === Constraints
 
-[[assertj:TestMethodWithoutAssertion]]
+[[test:TestMethodWithoutAssertion]]
 [source,cypher,role=constraint,requiresConcepts="junit4:TestMethod,assertj:AssertMethod,spring-test-web:Assert"]
 .All test methods must perform at least one assertion (within a call hierarchy of max. 3 steps).
 ----
@@ -22,39 +26,28 @@ RETURN
   testMethod AS Method
 ----
 
-=== Concepts
+=== Reports
 
-The following framworks are used to verify assertions:
-
-- AssertJ
-- Spring Web Test
-
-[[assertj:AssertMethod]]
-[source,cypher,role=concept]
-.Mark all assertThat methods of 'org.assertj.core.api.Assertions' with "AssertJ" and "Assert".
+[[test:TestAffectedByLastCommit]]
+[source,cypher,role=concept,requiresConcepts="junit4:TestClass,vcs:CurrentBranch",severity=INFO]
+.Creates a report about all test classes that are affected by changes to Java types by the last commit on the current branch.
 ----
 MATCH
-  (assertType:Type)-[:DECLARES]->(assertMethod)
+  (:Branch:Current)-[:HAS_HEAD]->(:Commit)-[:CONTAINS_CHANGE]->()-[:MODIFIES]->(sourceFile:File)
 WHERE
-  assertType.fqn = 'org.assertj.core.api.Assertions'
-  and assertMethod.signature =~ '.* assertThat.*'
-SET
-  assertMethod:AssertJ:Assert
-RETURN
-  assertMethod
-----
-
-[[spring-test-web:Assert]]
-[source,cypher,role=concept]
-.Mark method "org.springframework.test.web.servlet.ResultActions#andExpect" as "Spring" and "Assert".
-----
+  sourceFile.relativePath ends with ".java"
+WITH
+  sourceFile
 MATCH
-  (assertType:Type)-[:DECLARES]->(assertMethod)
+  (artifact:Artifact)-[:CONTAINS]->(package:Package)-[:CONTAINS]->(type:Type)
 WHERE
-  assertType.fqn = 'org.springframework.test.web.servlet.ResultActions'
-  and assertMethod.signature =~ '.* andExpect.*'
-SET
-  assertMethod:Spring:Assert
+  sourceFile.relativePath ends with (package.fileName + "/" + type.sourceFileName)
+WITH
+  artifact, type
+MATCH
+  (test:Test:Class)-[:DEPENDS_ON*0..1]->(type)
 RETURN
-  assertMethod
+  artifact.name, test.fqn as Test, collect(type.fqn) as ModifiedTypes
+ORDER BY
+  size(ModifiedTypes) desc
 ----
