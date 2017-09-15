@@ -407,8 +407,8 @@
                                 </scanInclude>
                             </scanIncludes>
                             <reportProperties>
-                                <graphml.report.directory>${project.build.directory}/graphml</graphml.report.directory>
-                                <testsuite.report.directory>${project.build.directory}/testsuite</testsuite.report.directory>
+                                <graphml.report.directory>${session.executionRootDirectory}/target/graphml</graphml.report.directory>
+                                <testsuite.report.directory>${session.executionRootDirectory}/target/testsuite</testsuite.report.directory>
                             </reportProperties>
                         </configuration>
                     </execution>
@@ -561,6 +561,9 @@
         </profile>
         <profile>
             <id>jqa-create-testsuite</id>
+            <properties>
+                <cobertura.skip>true</cobertura.skip>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -575,7 +578,7 @@
                         <artifactId>jqassistant-maven-plugin</artifactId>
                         <configuration>
                             <concepts>
-                                <concept>testsuite-git:SurefireSuiteForLastCommit</concept>
+                                <concept>testsuite:SurefireSuiteForLastGitCommit</concept>
                             </concepts>
                         </configuration>
                     </plugin>
@@ -589,9 +592,8 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.13</version>
                         <configuration>
-                            <includesFile>${project.build.directory}/testsuite/${project.artifactId}.includes</includesFile>
+                            <includesFile>${session.executionRootDirectory}/target/testsuite/${project.artifactId}</includesFile>
                         </configuration>
                     </plugin>
                     <plugin>
