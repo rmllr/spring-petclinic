@@ -424,11 +424,6 @@
                 -->
                 <dependencies>
                     <dependency>
-                        <groupId>de.kontext-e.jqassistant.plugin</groupId>
-                        <artifactId>jqassistant.plugin.git</artifactId>
-                        <version>1.2.0</version>
-                    </dependency>
-                    <dependency>
                         <groupId>org.jqassistant.contrib.testsuite</groupId>
                         <artifactId>jqassistant-testsuite-plugin</artifactId>
                         <version>1.0.0-SNAPSHOT</version>
