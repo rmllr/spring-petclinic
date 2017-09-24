@@ -1,0 +1,56 @@
+[[vcs:Default]]
+[role=group,includesConstraints="vcs:BranchesMustBeSynchronized",includesConcepts="vcs:CurrentBranch"]
+== Version Control System
+
+The rules defined in this document refer to Git.
+
+=== Concepts
+[[vcs:CurrentBranch]]
+[source,cypher,role=concept]
+.Labels the current branch with `Current`.
+----
+MATCH
+  (repository:Repository)-[:HAS_BRANCH]->(branch:Git:Branch)
+WHERE
+  branch.name starts with "heads/"
+MATCH
+  (repository)-[:HAS_HEAD]->(head:Git:Commit),
+  (branch)-[:HAS_HEAD]->(branchHead:Git:Commit),
+   p=shortestPath((branchHead)-[:HAS_PARENT*0..]->(head))
+SET
+  branch:Current
+RETURN
+  branch.name as CurrentBranch, length(p) as Offset
+----
+
+=== Constraints
+
+[[vcs:BranchesMustBeSynchronized]]
+[source,cypher,role=constraint]
+.The branches "violations" and "jqa-remote" must include the latest commit (HEAD) of "master" (i.e. merges are required).
+----
+MATCH
+  (master:Branch),
+  (branch:Branch)
+WHERE
+  master.name = "heads/master"
+  and branch.name in [
+    "heads/violations",
+    "heads/jqa-remote",
+    "heads/testimpactanalysis"
+  ]
+WITH
+  master, branch
+MATCH
+  (master)-[:HAS_HEAD]->(masterHead:Commit),
+  (branch)-[:HAS_HEAD]->(branchHead:Commit)
+OPTIONAL MATCH
+  p=shortestPath((branchHead)-[:HAS_PARENT*]->(masterHead))
+WITH
+  master, branch, p
+WHERE
+  p is null
+RETURN
+  branch.name as OutdatedBranch
+----
+

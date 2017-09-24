@@ -1,0 +1,19 @@
+== Spring Test Framework
+
+=== Concepts
+
+[[spring-test-web:Assert]]
+[source,cypher,role=concept]
+.Mark method "org.springframework.test.web.servlet.ResultActions#andExpect" as "Spring" and "Assert".
+----
+MATCH
+  (assertType:Type)-[:DECLARES]->(assertMethod)
+WHERE
+  assertType.fqn = 'org.springframework.test.web.servlet.ResultActions'
+  and assertMethod.signature =~ '.* andExpect.*'
+SET
+  assertMethod:Spring:Assert
+RETURN
+  assertMethod
+----
+
