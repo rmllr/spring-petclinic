@@ -36,7 +36,8 @@ WHERE
   master.name = "heads/master"
   and branch.name in [
     "heads/violations",
-    "heads/jqa-remote"
+    "heads/jqa-remote",
+    "heads/testimpactanalysis"
   ]
 WITH
   master, branch
