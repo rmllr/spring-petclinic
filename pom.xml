@@ -397,6 +397,7 @@
                             <failOnSeverity>CRITICAL</failOnSeverity>
                             <warnOnSeverity>MINOR</warnOnSeverity>
                             <!--
+                            <useExecutionRootAsProjectRoot>true</useExecutionRootAsProjectRoot>
                             <groups>
                                 <group>default</group>
                             </groups>
@@ -408,7 +409,7 @@
                             </scanIncludes>
                             <reportProperties>
                                 <graphml.report.directory>${session.executionRootDirectory}/target/graphml</graphml.report.directory>
-                                <testsuite.report.directory>${session.executionRootDirectory}/target/testsuite</testsuite.report.directory>
+                                <testimpactanalysis.report.directory>${session.executionRootDirectory}/target/testimpactanalysis</testimpactanalysis.report.directory>
                             </reportProperties>
                         </configuration>
                     </execution>
@@ -424,8 +425,8 @@
                 -->
                 <dependencies>
                     <dependency>
-                        <groupId>org.jqassistant.contrib.testsuite</groupId>
-                        <artifactId>jqassistant-testsuite-plugin</artifactId>
+                        <groupId>org.jqassistant.contrib.plugin</groupId>
+                        <artifactId>jqassistant-test-impact-analysis-plugin</artifactId>
                         <version>1.0.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -573,7 +574,7 @@
                         <artifactId>jqassistant-maven-plugin</artifactId>
                         <configuration>
                             <concepts>
-                                <concept>testsuite:SurefireSuiteForLastGitCommit</concept>
+                                <concept>test-impact-analysis:SurefireSuiteForLastGitCommit</concept>
                             </concepts>
                         </configuration>
                     </plugin>
@@ -599,7 +600,7 @@
                         <artifactId>jqassistant-maven-plugin</artifactId>
                         <configuration>
                             <concepts>
-                                <concept>testsuite:SurefireSuiteForCurrentBranch</concept>
+                                <concept>test-impact-analysis:SurefireSuiteForCurrentBranch</concept>
                             </concepts>
                         </configuration>
                     </plugin>
@@ -614,7 +615,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <includesFile>${session.executionRootDirectory}/target/testsuite/${project.artifactId}</includesFile>
+                            <includesFile>${session.executionRootDirectory}/target/testimpactanalysis/${project.artifactId}</includesFile>
                         </configuration>
                     </plugin>
                     <plugin>
