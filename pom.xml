@@ -409,7 +409,7 @@
                             </scanIncludes>
                             <reportProperties>
                                 <graphml.report.directory>${session.executionRootDirectory}/target/graphml</graphml.report.directory>
-                                <testimpactanalysis.report.directory>${session.executionRootDirectory}/target/testimpactanalysis</testimpactanalysis.report.directory>
+                                <testImpactAnalysis.report.directory>${session.executionRootDirectory}/target/testimpactanalysis</testImpactAnalysis.report.directory>
                             </reportProperties>
                         </configuration>
                     </execution>
