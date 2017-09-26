@@ -1,0 +1,31 @@
+[[business:Default]]
+[role=group,includesConcepts="business:Subdomain"]
+== Business
+
+This section describes the application from the business' perspective.
+
+=== Concepts
+
+The Spring PetClinic application consists of several business subdomains that can be identified by naming conventions.
+
+[[business:Subdomain]]
+.Creates predefined Subdomain nodes and connects them to all Type nodes via naming conventions.
+[source,cypher,role=concept]
+----
+UNWIND [
+    { name: "Clinic" },
+    { name: "Owner" },
+    { name: "Person" }, 
+    { name: "Pet" },
+    { name: "Specialty" },
+    { name: "Vet" }, 
+    { name: "Visit" }
+]
+AS properties
+CREATE (s:Subdomain) SET s = properties
+WITH s
+    MATCH (t:Type)
+        WHERE t.name CONTAINS s.name
+    MERGE (t)-[:BELONGS_TO]->(s)
+RETURN s.name as Subdomain, COUNT(t) as Types
+----
