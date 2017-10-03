@@ -1,3 +1,4 @@
+:toc:
 :numbered:              // Number all section headers
 :sectnumlevels: 5       // Number up to section level 5
 :toclevels: 2           // Table of content should have only two levels
@@ -18,8 +19,9 @@ The following rule groups are executed during a build:
 
 [[default]]
 [role=group,includesGroups="package:Default,spring-component:Default,model:Default,business:Default,management:Default,test:Default,vcs:Default"]
-- <<spring-component:Default>>
+- <<maven:Default>>
 - <<package:Default>>
+- <<spring-component:Default>>
 - <<model:Default>>
 - <<business:Default>>
 - <<management:Default>>
