@@ -408,6 +408,9 @@
                             </scanIncludes>
                             <reportProperties>
                                 <graphml.report.directory>${project.build.directory}/graphml</graphml.report.directory>
+                                <asciidoc.report.directory>${project.build.directory}/asciidoc</asciidoc.report.directory>
+                                <asciidoc.report.rule.directory>${project.basedir}/jqassistant</asciidoc.report.rule.directory>
+                                <asciidoc.report.file.include>index.adoc</asciidoc.report.file.include>
                             </reportProperties>
                         </configuration>
                     </execution>
@@ -426,6 +429,11 @@
                         <groupId>de.kontext-e.jqassistant.plugin</groupId>
                         <artifactId>jqassistant.plugin.git</artifactId>
                         <version>1.2.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jqassistant.contrib.plugin</groupId>
+                        <artifactId>jqassistant-asciidoc-report-plugin</artifactId>
+                        <version>1.0.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
