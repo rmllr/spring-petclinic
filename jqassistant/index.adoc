@@ -13,6 +13,10 @@ rendering of embedded diagrams http://www.graphviz.org[Graphviz] needs to be ins
 TIP: GraphML reports may be viewed using http://www.yworks.com/en/products/yfiles/yed/[yEd]. After opening a file you
 should apply a layout, e.g. menu:Layout[Hierarchical].
 
+== Summary
+
+jQA::Summary[]
+
 == CI Build
 
 The following rule groups are executed during a build:
