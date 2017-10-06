@@ -1,4 +1,4 @@
-:toc:
+:toc: left
 :numbered:              // Number all section headers
 :sectnumlevels: 5       // Number up to section level 5
 :toclevels: 2           // Table of content should have only two levels
@@ -18,9 +18,9 @@ should apply a layout, e.g. menu:Layout[Hierarchical].
 The following rule groups are executed during a build:
 
 [[default]]
-[role=group,includesGroups="package:Default,spring-component:Default,model:Default,business:Default,management:Default,test:Default,vcs:Default"]
+[role=group,includesGroups="layer:Default,spring-component:Default,model:Default,business:Default,management:Default,test:Default,vcs:Default"]
 - <<maven:Default>>
-- <<package:Default>>
+- <<layer:Default>>
 - <<spring-component:Default>>
 - <<model:Default>>
 - <<business:Default>>
@@ -29,7 +29,7 @@ The following rule groups are executed during a build:
 - <<vcs:Default>>
 
 include::maven.adoc[]
-include::package.adoc[]
+include::layer.adoc[]
 include::spring-component.adoc[]
 include::model.adoc[]
 include::business.adoc[]
