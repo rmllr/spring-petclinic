@@ -429,7 +429,7 @@
                     <dependency>
                         <groupId>org.jqassistant.contrib.plugin</groupId>
                         <artifactId>jqassistant-test-impact-analysis-plugin</artifactId>
-                        <version>1.0.0-SNAPSHOT</version>
+                        <version>1.0.0-RC2</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jqassistant.contrib.plugin</groupId>
