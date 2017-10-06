@@ -112,7 +112,7 @@ RETURN DISTINCT
 ----
 
 [[spring-component:ControllerMustBeLocatedInWebLayer]]
-[source,cypher,role=constraint,requiresConcepts="spring-component:Component,package:Layer"]
+[source,cypher,role=constraint,requiresConcepts="spring-component:Component,layer:Layer"]
 .A controller must be located in the layer named 'web'.
 ----
 MATCH
@@ -165,7 +165,7 @@ RETURN DISTINCT
 ----
 
 [[spring-component:ServiceMustBeLocatedInServiceLayer]]
-[source,cypher,role=constraint,requiresConcepts="spring-component:Component,package:Layer"]
+[source,cypher,role=constraint,requiresConcepts="spring-component:Component,layer:Layer"]
 .A service must be located in the layer named 'service'.
 ----
 MATCH
@@ -253,7 +253,7 @@ RETURN DISTINCT
 ----
 
 [[spring-component:RepositoryMustBeLocatedInRepositoryLayer]]
-[source,cypher,role=constraint,requiresConcepts="spring-component:Component,package:Layer"]
+[source,cypher,role=constraint,requiresConcepts="spring-component:Component,layer:Layer"]
 .A repository must be located in the layer named 'repository'.
 ----
 MATCH
