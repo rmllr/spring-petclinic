@@ -1,14 +1,14 @@
-[[package:Default]]
-[role=group,includesConstraints="package:LayerDependencyViolation",includesConcepts="package:LayerDependency.graphml"]
-== Packages
+[[layer:Default]]
+[role=group,includesConstraints="layer:LayerDependencyViolation",includesConcepts="layer:LayerDependency.graphml"]
+== Layer
 
-This chapter describes the concepts and constraints related to the package structure.
+This chapter describes the concepts and constraints related to the layered package structure.
 
 === Concepts
 
 The root package of the application is "org.springframework.samples.petclinic".
 
-[[package:Root]]
+[[layer:Root]]
 .Labels the root package of the main artifact as `Root`
 [source,cypher,role=concept,requiresConcepts="maven:MainArtifact"]
 ----
@@ -29,9 +29,9 @@ The application has a layered structure. Each layer is represented by a package 
 - repository
 - model
 
-[[package:Layer]]
+[[layer:Layer]]
 .Labels all direct sub-packages of the root package as `Layer`.
-[source,cypher,role=concept,requiresConcepts="package:Root"]
+[source,cypher,role=concept,requiresConcepts="layer:Root"]
 ----
 MATCH
   (:Root:Package)-[:CONTAINS]->(layer:Package)
@@ -50,8 +50,8 @@ RETURN
 
 A dependency between two layers exists if there are dependencies between Java types in any of the sub-packages.
 
-[[package:LayerDependency]]
-[source,cypher,role=concept,requiresConcepts="package:Layer"]
+[[layer:LayerDependency]]
+[source,cypher,role=concept,requiresConcepts="layer:Layer"]
 .Adds a relation `DEPENDS_ON` between two layers if there are type dependencies between them.
 ----
 MATCH
@@ -70,10 +70,11 @@ RETURN
   layer1 as Dependent, layer2 as Dependency, weight as Weight
 ----
 
+
 There are definitions of allowed dependencies between layers.
 
-[[package:LayerDependencyDefinition]]
-[source,cypher,role=concept,requiresConcepts="package:Layer",reportType="graphml"]
+[[layer:LayerDependencyDefinition]]
+[source,cypher,role=concept,requiresConcepts="layer:Layer",reportType="graphml"]
 .Adds `DEFINES_DEPENDENCY` relations between layers for allowed dependencies.
 ----
 MATCH
@@ -91,10 +92,12 @@ RETURN
   *
 ----
 
+link:graphml/layer_LayerDependencyDefinition.graphml[GraphML Report]
+
 === Constraints
 
-[[package:LayerDependencyViolation]]
-[source,cypher,role=constraint,requiresConcepts="package:LayerDependency,package:LayerDependencyDefinition",primaryReportColumn="Type"]
+[[layer:LayerDependencyViolation]]
+[source,cypher,role=constraint,requiresConcepts="layer:LayerDependency,layer:LayerDependencyDefinition",primaryReportColumn="Type"]
 .There must be no dependencies between layers that are not explicitly defined.
 ----
 MATCH
@@ -113,8 +116,8 @@ RETURN
 
 === Reports
 
-[[package:LayerDependency.graphml]]
-[source,cypher,role=concept,requiresConcepts="package:LayerDependency",reportType="graphml"]
+[[layer:LayerDependency.graphml]]
+[source,cypher,role=concept,requiresConcepts="layer:LayerDependency",reportType="graphml"]
 .Creates a GraphML report about dependencies between layers and their contained types.
 ----
 MATCH
@@ -129,3 +132,4 @@ RETURN {
 } as TypesPerLayer
 ----
 
+link:graphml/layer_LayerDependency.graphml[GraphML Report]
