@@ -70,6 +70,7 @@ RETURN
   layer1 as Dependent, layer2 as Dependency, weight as Weight
 ----
 
+
 There are definitions of allowed dependencies between layers.
 
 [[layer:LayerDependencyDefinition]]
@@ -90,6 +91,8 @@ CREATE UNIQUE
 RETURN
   *
 ----
+
+link:graphml/layer_LayerDependencyDefinition.graphml[GraphML Report]
 
 === Constraints
 
@@ -129,3 +132,4 @@ RETURN {
 } as TypesPerLayer
 ----
 
+link:graphml/layer_LayerDependency.graphml[GraphML Report]

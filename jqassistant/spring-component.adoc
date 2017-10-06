@@ -305,3 +305,4 @@ RETURN
   otherType as Dependency
 ----
 
+link:graphml/spring-component_ComponentDependencies.graphml[GraphML Report]

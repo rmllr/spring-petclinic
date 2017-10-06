@@ -407,9 +407,9 @@
                                 </scanInclude>
                             </scanIncludes>
                             <reportProperties>
-                                <graphml.report.directory>${project.build.directory}/graphml</graphml.report.directory>
-                                <asciidoc.report.directory>${project.build.directory}/asciidoc</asciidoc.report.directory>
-                                <asciidoc.report.rule.directory>${project.basedir}/jqassistant</asciidoc.report.rule.directory>
+                                <graphml.report.directory>${session.topLevelProject.build.directory}/html/graphml</graphml.report.directory>
+                                <asciidoc.report.directory>${session.topLevelProject.build.directory}/html</asciidoc.report.directory>
+                                <asciidoc.report.rule.directory>${session.topLevelProject.basedir}/jqassistant</asciidoc.report.rule.directory>
                                 <asciidoc.report.file.include>index.adoc</asciidoc.report.file.include>
                             </reportProperties>
                         </configuration>
@@ -433,7 +433,7 @@
                     <dependency>
                         <groupId>org.jqassistant.contrib.plugin</groupId>
                         <artifactId>jqassistant-asciidoc-report-plugin</artifactId>
-                        <version>1.0.0-SNAPSHOT</version>
+                        <version>1.0.0-RC1</version>
                     </dependency>
                 </dependencies>
             </plugin>
