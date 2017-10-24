@@ -432,7 +432,7 @@
                     <dependency>
                         <groupId>org.jqassistant.contrib.plugin</groupId>
                         <artifactId>jqassistant-asciidoc-report-plugin</artifactId>
-                        <version>1.0.0-RC3</version>
+                        <version>1.0.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
