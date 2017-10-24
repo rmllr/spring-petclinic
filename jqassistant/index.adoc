@@ -15,15 +15,16 @@ should apply a layout, e.g. menu:Layout[Hierarchical].
 
 == Summary
 
-jQA::Summary[]
+include::jQA:Summary[]
 
 == CI Build
 
 The following rule groups are executed during a build:
 
 [[default]]
-[role=group,includesGroups="layer:Default,spring-component:Default,model:Default,business:Default,management:Default,test:Default,vcs:Default"]
+[role=group,includesGroups="maven:Default,package:Default,layer:Default,spring-component:Default,model:Default,business:Default,management:Default,test:Default,vcs:Default"]
 - <<maven:Default>>
+- <<package:Default>>
 - <<layer:Default>>
 - <<spring-component:Default>>
 - <<model:Default>>
@@ -33,6 +34,7 @@ The following rule groups are executed during a build:
 - <<vcs:Default>>
 
 include::maven.adoc[]
+include::package.adoc[]
 include::layer.adoc[]
 include::spring-component.adoc[]
 include::model.adoc[]
@@ -46,3 +48,6 @@ include::spring-jmx.adoc[]
 include::spring-test.adoc[]
 include::assertj.adoc[]
 
+== Imported Rules
+
+include::jQA:ImportedRules[]

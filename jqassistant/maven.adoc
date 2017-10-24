@@ -1,7 +1,8 @@
 [[maven:Default]]
+[role=group,includesConcepts="maven:ProjectArtifactDependencyDiagram"]
 == Maven
 
-This chapter describes the concepts related to Maven.
+This chapter describes the rules related to Maven.
 
 === Concepts
 
@@ -17,5 +18,19 @@ SET
   mainArtifact:Main
 RETURN
   mainArtifact as MainArtifact
+----
+
+=== Reports
+
+[[maven:ProjectArtifactDependencyDiagram]]
+[source,cypher,role=concept,requiresConcepts="maven:MainArtifact",reportProperties="render=component-diagram"]
+.Creates a diagram about project artifact dependencies.
+----
+MATCH
+  (:Maven:Project)-[:CREATES]->(artifact:Artifact)
+OPTIONAL MATCH
+  (artifact)-[dependsOn:DEPENDS_ON]->(:Artifact)<-[:CREATES]-(:Maven:Project)
+RETURN
+  *
 ----
 

@@ -1,5 +1,5 @@
 [[layer:Default]]
-[role=group,includesConstraints="layer:LayerDependencyViolation",includesConcepts="layer:LayerDependency.graphml"]
+[role=group,includesConstraints="layer:LayerDependencyViolation",includesConcepts="layer:LayerDependencyDiagram,layer:LayerDependency.graphml"]
 == Layer
 
 This chapter describes the concepts and constraints related to the layered package structure.
@@ -115,6 +115,18 @@ RETURN
 ----
 
 === Reports
+
+[[layer:LayerDependencyDiagram]]
+[source,cypher,role=concept,requiresConcepts="layer:LayerDependency",reportProperties="render=component-diagram"]
+.Creates a diagram about dependencies between layers.
+----
+MATCH
+  (layer:Layer)
+OPTIONAL MATCH
+  (layer)-[dependsOn:DEPENDS_ON]->(:Layer)
+RETURN
+  *
+----
 
 [[layer:LayerDependency.graphml]]
 [source,cypher,role=concept,requiresConcepts="layer:LayerDependency",reportType="graphml"]

@@ -1,0 +1,32 @@
+[[package:Default]]
+[role=group,includesConstraints="dependency:PackageCycles",includesConcepts="package:DependencyDiagram"]
+== Package
+
+This chapter describes the concepts and constraints related to the package structure.
+The following constraints are verified:
+
+* <<dependency:PackageCycles>>
+
+The following
+
+=== Reports
+
+[[package:DependencyDiagram]]
+[source,cypher,role=concept,requiresConcepts="layer:LayerDependency",reportProperties="render=component-diagram"]
+.Creates a diagram about dependencies between layers.
+----
+MATCH
+  (artifact:Artifact)-[:CONTAINS]->(package:Package)-[:CONTAINS]->(:Type)
+WHERE
+  artifact.type <> "test-jar"
+OPTIONAL MATCH
+  (package)-[dependsOn:DEPENDS_ON]->(:Package)
+RETURN
+  {
+    role : "graph",
+    parent : artifact,
+    nodes : collect(package),
+    relationships: collect(dependsOn)
+  }
+----
+
