@@ -14,28 +14,19 @@ The generated documentation as HTML files based on the AsciiDoc files in <tt>/jq
 
 ![HTML-Documentation_1](screenshots/html-documentation-1.png)
 
-**Figure 1: Beginning of the documentation including a table of contents**
+**Figure 1: Beginning of the documentation including a table of contents on the left side**
 
     
 ![HTML-Documentation_2](screenshots/html-documentation-2.png)
 
-**Figure 2: UML diagram produced with PlantUML/GraphViz, defined directly in the AsciiDoc file**
+**Figure 2: UML diagram produced with PlantUML/GraphViz directly out of the real code**
 
 
 ![HTML-Documentation_3](screenshots/html-documentation-3.png)
 
-**Figure 3: Inline defined constraints that jQAssistant will apply against your code artifacts**
+**Figure 3: Inline defined concepts that jQAssistant will find them in your code and report**
 
   
-### [index.pdf](documentation/index.pdf)
-The corresponding, generated PDF documentation, also based on the AsciiDoc files, will be placed in the same directory as the HTML documentation.  
-
-![PDF-Report](screenshots/pdf-documentation.png)
-
-**Figure 4: Beginning of the PDF documentation**
-
-
-
 ## Reports
 Within a build, jQAssistant will not only produce the documentation files, but also apply and validate your software structure. Here you can see some examples of the produced results:
 
@@ -45,32 +36,20 @@ The XML report with the result of the architecture validation  that will be prod
 
 ![XML-File](screenshots/xml-report.png)
 
-**Figure 5: The raw XML report**
+**Figure 4: The raw XML report**
 
 
 ### .graphml files
 You can also define some special queries in your documentation that generate diagrams. Here are some of the diagramms generated in GraphML:
 
-* [structure_LayerDependencies.graphml](reports/structure_LayerDependencies.graphml)
-
-* [structure_PackageDependencies.graphml](reports/structure_PackageDependencies.graphml)
+* [layer_LayerDependencyDefinition.graphml](reports/graphml/layer_LayerDependencyDefinition.graphml)
   
 You'll need yEd to open them. In yEd, you have to select all elements and layout them e. g. via "Layout" -> "hierarchical". But for your convenience, here you can see an example:  
 
 
 ![yEd-Editor](screenshots/yed-graphml.png)
 
-**Figure 6: A diagram of some components of the software system, viewed in yEd**
+**Figure 5: A diagram of some components of the software system, viewed in yEd**
 
 
-### [jqassistant.html](reports/jqassistant.html)
-Additionally there is nice HTML-style report, that will be generated with <tt>mvn site</tt> and included in your Maven HTML site! 
-  
-
-![HTML-Report](screenshots/html-report.png)
-
-**Figure 7: The report in the HTML format**
-
-
-
-Have fun exploring!
+For more information, check you the [jQAssistant documentation](http://buschmais.github.io/jqassistant/doc/1.3.0/).
