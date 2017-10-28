@@ -52,4 +52,4 @@ You'll need yEd to open them. In yEd, you have to select all elements and layout
 **Figure 5: A diagram of some components of the software system, viewed in yEd**
 
 
-For more information, check you the [jQAssistant documentation](http://buschmais.github.io/jqassistant/doc/1.3.0/).
+For more information, check out the [documentation](http://buschmais.github.io/jqassistant/doc/1.3.0/) or the [project's website](https://jqassistant.org/).
