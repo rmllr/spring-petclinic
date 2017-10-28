@@ -24,7 +24,7 @@ The generated documentation as HTML files based on the AsciiDoc files in <tt>/jq
 
 ![HTML-Documentation_3](screenshots/html-documentation-3.png)
 
-**Figure 3: Inline defined concepts that jQAssistant will find them in your code and report**
+**Figure 3: Inline defined concepts that jQAssistant will find in your code and show in your documentation**
 
   
 ## Reports
