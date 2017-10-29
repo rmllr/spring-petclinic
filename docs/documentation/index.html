@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"/><![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 1.5.3"/>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
 <title>Spring PetClinic Coding Rules</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 /* Remove comment around @import statement below when using as a custom stylesheet */
@@ -17,7 +17,6 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -52,7 +51,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -64,7 +63,6 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -91,13 +89,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -119,18 +116,25 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -197,7 +201,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -253,13 +257,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -280,10 +284,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -300,7 +306,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -363,6 +370,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -508,59 +516,92 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .head .head{color:#f4f}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Spring PetClinic Coding Rules</h1>
-<div id="toc" class="toc">
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_ci_build">1. CI Build</a></li>
-<li><a href="#structure:Default">2. Structural Rules And Reports</a>
+<li><a href="#_summary">1. Summary</a></li>
+<li><a href="#_ci_build">2. CI Build</a></li>
+<li><a href="#maven:Default">3. Maven</a>
 <ul class="sectlevel2">
-<li><a href="#_layers_and_elements">2.1. Layers And Elements</a></li>
-<li><a href="#_constraints">2.2. Constraints</a>
-<ul class="sectlevel3">
-<li><a href="#_general">2.2.1. General</a></li>
-<li><a href="#_ui">2.2.2. UI</a></li>
-<li><a href="#_logic">2.2.3. Logic</a></li>
-<li><a href="#_persistence">2.2.4. Persistence</a></li>
+<li><a href="#_concepts">3.1. Concepts</a></li>
+<li><a href="#_reports">3.2. Reports</a></li>
 </ul>
 </li>
-<li><a href="#_concepts">2.3. Concepts</a></li>
-<li><a href="#_reports">2.4. Reports</a></li>
-</ul>
-</li>
-<li><a href="#model:Default">3. JPA Model</a>
-<ul class="sectlevel2">
-<li><a href="#_constraints_2">3.1. Constraints</a></li>
-</ul>
-</li>
-<li><a href="#management:Default">4. Management</a>
+<li><a href="#package:Default">4. Package</a>
 <ul class="sectlevel2">
 <li><a href="#_reports_2">4.1. Reports</a></li>
 </ul>
 </li>
-<li><a href="#test:Default">5. Test Rules</a>
+<li><a href="#layer:Default">5. Layer</a>
 <ul class="sectlevel2">
-<li><a href="#_constraints_3">5.1. Constraints</a></li>
-<li><a href="#_concepts_2">5.2. Concepts</a></li>
+<li><a href="#_concepts_2">5.1. Concepts</a></li>
+<li><a href="#_constraints">5.2. Constraints</a></li>
+<li><a href="#_reports_3">5.3. Reports</a></li>
 </ul>
 </li>
-<li><a href="#_spring_mvc_rules">6. Spring MVC Rules</a>
+<li><a href="#spring-component:Default">6. Spring Components</a>
 <ul class="sectlevel2">
-<li><a href="#_concepts_3">6.1. Concepts</a></li>
+<li><a href="#_overview">6.1. Overview</a></li>
+<li><a href="#_constraints_2">6.2. Constraints</a></li>
+<li><a href="#_concepts_3">6.3. Concepts</a></li>
+<li><a href="#_reports_4">6.4. Reports</a></li>
 </ul>
 </li>
-<li><a href="#_spring_data_rules">7. Spring Data Rules</a>
+<li><a href="#model:Default">7. JPA Model</a>
 <ul class="sectlevel2">
-<li><a href="#_concepts_4">7.1. Concepts</a></li>
+<li><a href="#_constraints_3">7.1. Constraints</a></li>
 </ul>
 </li>
-<li><a href="#_spring_jmx_rules">8. Spring JMX Rules</a>
+<li><a href="#business:Default">8. Business</a>
 <ul class="sectlevel2">
-<li><a href="#_concepts_5">8.1. Concepts</a></li>
+<li><a href="#_concepts_4">8.1. Concepts</a></li>
 </ul>
 </li>
+<li><a href="#management:Default">9. Management</a>
+<ul class="sectlevel2">
+<li><a href="#_reports_5">9.1. Reports</a></li>
+</ul>
+</li>
+<li><a href="#test:Default">10. Tests</a>
+<ul class="sectlevel2">
+<li><a href="#_constraints_4">10.1. Constraints</a></li>
+</ul>
+</li>
+<li><a href="#vcs:Default">11. Version Control System</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_5">11.1. Concepts</a></li>
+<li><a href="#_constraints_5">11.2. Constraints</a></li>
+</ul>
+</li>
+<li><a href="#_spring_mvc_rules">12. Spring MVC Rules</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_6">12.1. Concepts</a></li>
+</ul>
+</li>
+<li><a href="#_spring_data_rules">13. Spring Data Rules</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_7">13.1. Concepts</a></li>
+</ul>
+</li>
+<li><a href="#_spring_jmx_rules">14. Spring JMX Rules</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_8">14.1. Concepts</a></li>
+</ul>
+</li>
+<li><a href="#_spring_test_framework">15. Spring Test Framework</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_9">15.1. Concepts</a></li>
+</ul>
+</li>
+<li><a href="#_assertj">16. AssertJ</a>
+<ul class="sectlevel2">
+<li><a href="#_concepts_10">16.1. Concepts</a></li>
+</ul>
+</li>
+<li><a href="#_imported_rules">17. Imported Rules</a></li>
 </ul>
 </div>
 </div>
@@ -583,10 +624,300 @@ rendering of embedded diagrams <a href="http://www.graphviz.org">Graphviz</a> ne
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+GraphML reports may be viewed using <a href="http://www.yworks.com/en/products/yfiles/yed/">yEd</a>. After opening a file you
+should apply a layout, e.g. <span class="menuseq"><b class="menu">Layout</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Hierarchical</b></span>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ci_build">1. CI Build</h2>
+<h2 id="_summary">1. Summary</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread summary">
+<caption class="title">Table 1. Constraints</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Id</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Severity</th>
+<th class="tableblock halign-left valign-top">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#dependency:PackageCycles">dependency:PackageCycles</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There must be no cyclic package dependencies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#junit4:IgnoreWithoutMessage">junit4:IgnoreWithoutMessage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All @Ignore annotations must provide a message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#layer:LayerDependencyViolation">layer:LayerDependencyViolation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There must be no dependencies between layers that are not explicitly defined.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#model:JpaEntityInModelPackage">model:JpaEntityInModelPackage</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All JPA entities must be located in packages named "model".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ControllerDependencies">spring-component:ControllerDependencies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A controller can only have dependencies to services (e.g. direct usage of repositories is not allowed).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ControllerMustBeLocatedInWebLayer">spring-component:ControllerMustBeLocatedInWebLayer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A controller must be located in the layer named 'web'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ImplementationDependencies">spring-component:ImplementationDependencies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There must be no direct dependencies between Spring component implementations, i.e. only dependencies to interfaces are allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:RepositoryDependencies">spring-component:RepositoryDependencies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A repository can only have dependencies to other repositories.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:RepositoryMustBeLocatedInRepositoryLayer">spring-component:RepositoryMustBeLocatedInRepositoryLayer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A repository must be located in the layer named 'repository'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ServiceDependencies">spring-component:ServiceDependencies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A service can only have dependencies to repositories or other services (e.g. usage of controllers is not allowed).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ServiceMustBeLocatedInServiceLayer">spring-component:ServiceMustBeLocatedInServiceLayer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A service must be located in the layer named 'service'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#test:TestMethodWithoutAssertion">test:TestMethodWithoutAssertion</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All test methods must perform at least one assertion (within a call hierarchy of max. 3 steps).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#vcs:BranchesMustBeSynchronized">vcs:BranchesMustBeSynchronized</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The branches "violations" and "jqa-remote" must include the latest commit (HEAD) of "master" (i.e. merges are required).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAJOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread summary">
+<caption class="title">Table 2. Concepts</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Id</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Severity</th>
+<th class="tableblock halign-left valign-top">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#assertj:AssertMethod">assertj:AssertMethod</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark all assertThat methods of 'org.assertj.core.api.Assertions' with "AssertJ" and "Assert".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#business:Subdomain">business:Subdomain</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates predefined Subdomain nodes and connects them to all Type nodes via naming conventions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#business:SubdomainDependency">business:SubdomainDependency</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates DEPENDS_ON relations between two subdomains if there are Java type dependencies between them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#dependency:Package">dependency:Package</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a DEPENDS_ON relationship between a packages if there are type dependencies between them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jpa2:Entity">jpa2:Entity</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types annotated with @javax.persistence.Entity with "Jpa" and "Entity".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#junit4:TestMethod">junit4:TestMethod</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds all test methods (i.e. annotated with "@org.junit.Test") and labels them with "Test" and             "Junit4".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#layer:Layer">layer:Layer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all direct sub-packages of the root package as <code>Layer</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#layer:LayerDependency">layer:LayerDependency</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a relation <code>DEPENDS_ON</code> between two layers if there are type dependencies between them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#layer:LayerDependencyDiagram">layer:LayerDependencyDiagram</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a diagram about dependencies between layers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#layer:Root">layer:Root</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels the root package of the main artifact as <code>Root</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#management:ManagedResources">management:ManagedResources</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All managed resources including their attributes and operations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#maven:MainArtifact">maven:MainArtifact</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all main artifacts created by Maven modules with <code>Main</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#maven:ProjectArtifactDependencyDiagram">maven:ProjectArtifactDependencyDiagram</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a diagram about project artifact dependencies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#package:DependencyDiagram">package:DependencyDiagram</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a diagram about dependencies between layers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:Component">spring-component:Component</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reports all Spring components.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-component:ComponentDependencies">spring-component:ComponentDependencies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a USES relation between Spring components.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-data:AnnotatedRepository">spring-data:AnnotatedRepository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types annotated with "org.springframework.stereotype.Repository" with "Spring", "Component" and "Repository".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-data:ImplementedRepository">spring-data:ImplementedRepository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types implementing "org.springframework.data.repository.Repository" with "Spring", "Component" and "Repository".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-data:Repository">spring-data:Repository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns all repositories.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-jmx:ManagedAttribute">spring-jmx:ManagedAttribute</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all methods annotated with "org.springframework.jmx.export.annotation.ManagedAttribute" with "Spring" and "ManagedAttribute".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-jmx:ManagedOperation">spring-jmx:ManagedOperation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all methods annotated with "org.springframework.jmx.export.annotation.ManagedAttribute" with "Spring" and "ManagedOperation".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-jmx:ManagedResource">spring-jmx:ManagedResource</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types annotated with "org.springframework.jmx.export.annotation.ManagedResource" with "Spring" and "ManagedResource".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-mvc:Controller">spring-mvc:Controller</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types annotated with "org.springframework.stereotype.Controller" with "Spring", "Component" and "Controller".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-mvc:Service">spring-mvc:Service</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels all types annotated with "org.springframework.stereotype.Service" with "Spring", "Component" and "Service".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spring-test-web:Assert">spring-test-web:Assert</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark method "org.springframework.test.web.servlet.ResultActions#andExpect" as "Spring" and "Assert".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#vcs:CurrentBranch">vcs:CurrentBranch</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels the current branch with <code>Current</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MINOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="green">SUCCESS</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ci_build">2. CI Build</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following rule groups are executed during a build:</p>
@@ -594,23 +925,476 @@ rendering of embedded diagrams <a href="http://www.graphviz.org">Graphviz</a> ne
 <div id="default" class="ulist group">
 <ul>
 <li>
-<p><a href="#structure:Default">Structural Rules And Reports</a></p>
+<p><a href="#maven:Default">Maven</a></p>
+</li>
+<li>
+<p><a href="#package:Default">Package</a></p>
+</li>
+<li>
+<p><a href="#layer:Default">Layer</a></p>
+</li>
+<li>
+<p><a href="#spring-component:Default">Spring Components</a></p>
 </li>
 <li>
 <p><a href="#model:Default">JPA Model</a></p>
 </li>
 <li>
+<p><a href="#business:Default">Business</a></p>
+</li>
+<li>
 <p><a href="#management:Default">Management</a></p>
 </li>
 <li>
-<p><a href="#test:Default">Test Rules</a></p>
+<p><a href="#test:Default">Tests</a></p>
+</li>
+<li>
+<p><a href="#vcs:Default">Version Control System</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1 group">
-<h2 id="structure:Default">2. Structural Rules And Reports</h2>
+<h2 id="maven:Default">3. Maven</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the rules related to Maven.</p>
+</div>
+<div class="sect2">
+<h3 id="_concepts">3.1. Concepts</h3>
+<div id="maven:MainArtifact" class="listingblock concept">
+<div class="title">Labels all main artifacts created by Maven modules with <code>Main</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (:Maven:Project)-[:CREATES]-&gt;(mainArtifact:Artifact)
+WHERE
+  mainArtifact.type &lt;&gt; &quot;test-jar&quot;
+SET
+  mainArtifact:Main
+RETURN
+  mainArtifact as MainArtifact</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(maven:MainArtifact)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>MainArtifact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples:spring-petclinic:war:4.2.6-SNAPSHOT
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reports">3.2. Reports</h3>
+<div id="maven:ProjectArtifactDependencyDiagram" class="listingblock concept">
+<div class="title">Creates a diagram about project artifact dependencies.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (:Maven:Project)-[:CREATES]-&gt;(artifact:Artifact)
+OPTIONAL MATCH
+  (artifact)-[dependsOn:DEPENDS_ON]-&gt;(:Artifact)&lt;-[:CREATES]-(:Maven:Project)
+RETURN
+  *</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(maven:ProjectArtifactDependencyDiagram)">
+<div><a href="maven_ProjectArtifactDependencyDiagram.svg"><img src="maven_ProjectArtifactDependencyDiagram.svg"/></a></div>
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 group">
+<h2 id="package:Default">4. Package</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the concepts and constraints related to the package structure.
+The following constraints are verified:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#dependency:PackageCycles">There must be no cyclic package dependencies.</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following</p>
+</div>
+<div class="sect2">
+<h3 id="_reports_2">4.1. Reports</h3>
+<div id="package:DependencyDiagram" class="listingblock concept">
+<div class="title">Creates a diagram about dependencies between layers.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (artifact:Artifact)-[:CONTAINS]-&gt;(package:Package)-[:CONTAINS]-&gt;(:Type)
+WHERE
+  artifact.type &lt;&gt; &quot;test-jar&quot;
+OPTIONAL MATCH
+  (package)-[dependsOn:DEPENDS_ON]-&gt;(:Package)
+RETURN
+  {
+    role : &quot;graph&quot;,
+    parent : artifact,
+    nodes : collect(package),
+    relationships: collect(dependsOn)
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(package:DependencyDiagram)">
+<div><a href="package_DependencyDiagram.svg"><img src="package_DependencyDiagram.svg"/></a></div>
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 group">
+<h2 id="layer:Default">5. Layer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the concepts and constraints related to the layered package structure.</p>
+</div>
+<div class="sect2">
+<h3 id="_concepts_2">5.1. Concepts</h3>
+<div class="paragraph">
+<p>The root package of the application is "org.springframework.samples.petclinic".</p>
+</div>
+<div id="layer:Root" class="listingblock concept">
+<div class="title">Labels the root package of the main artifact as <code>Root</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (:Main:Artifact)-[:CONTAINS]-&gt;(rootPackage:Package)
+WHERE
+  rootPackage.fqn = &quot;org.springframework.samples.petclinic&quot;
+SET
+  rootPackage:Root
+RETURN
+  rootPackage as RootPackage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(layer:Root)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>RootPackage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div class="paragraph">
+<p>The application has a layered structure. Each layer is represented by a package located directly in the root package:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>web</p>
+</li>
+<li>
+<p>service</p>
+</li>
+<li>
+<p>repository</p>
+</li>
+<li>
+<p>model</p>
+</li>
+</ul>
+</div>
+<div id="layer:Layer" class="listingblock concept">
+<div class="title">Labels all direct sub-packages of the root package as <code>Layer</code>.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (:Root:Package)-[:CONTAINS]-&gt;(layer:Package)
+WHERE
+  layer.name in [
+    &quot;web&quot;,
+    &quot;service&quot;,
+    &quot;repository&quot;,
+    &quot;model&quot;
+  ]
+SET
+  layer:Layer
+RETURN
+  layer as Layer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(layer:Layer)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div class="paragraph">
+<p>A dependency between two layers exists if there are dependencies between Java types in any of the sub-packages.</p>
+</div>
+<div id="layer:LayerDependency" class="listingblock concept">
+<div class="title">Adds a relation <code>DEPENDS_ON</code> between two layers if there are type dependencies between them.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (layer1:Layer:Package)-[:CONTAINS*]-&gt;(type1:Type),
+  (layer2:Layer:Package)-[:CONTAINS*]-&gt;(type2:Type),
+  (type1)-[d:DEPENDS_ON]-&gt;(type2)
+WHERE
+  layer1 &lt;&gt; layer2
+WITH
+  layer1, layer2, count(d) as weight
+MERGE
+  (layer1)-[d:DEPENDS_ON]-&gt;(layer2)
+SET
+  d.weight = weight
+RETURN
+  layer1 as Dependent, layer2 as Dependency, weight as Weight</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(layer:LayerDependency)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Dependent</th>
+<th>Dependency</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.web
+</td>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+<td>
+org.springframework.samples.petclinic.repository
+</td>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+<td>
+org.springframework.samples.petclinic.model
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository
+</td>
+<td>
+org.springframework.samples.petclinic.model
+</td>
+<td>
+27
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web
+</td>
+<td>
+org.springframework.samples.petclinic.model
+</td>
+<td>
+9
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div class="paragraph">
+<p>There are definitions of allowed dependencies between layers.</p>
+</div>
+<div id="layer:LayerDependencyDefinition" class="listingblock concept">
+<div class="title">Adds <code>DEFINES_DEPENDENCY</code> relations between layers for allowed dependencies.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (web:Layer {name:&quot;web&quot;}),
+  (service:Layer {name:&quot;service&quot;}),
+  (repository:Layer {name:&quot;repository&quot;}),
+  (model:Layer {name:&quot;model&quot;})
+CREATE UNIQUE
+ (web)-[w1:DEFINES_DEPENDENCY]-&gt;(service),
+ (web)-[w2:DEFINES_DEPENDENCY]-&gt;(model),
+ (service)-[s1:DEFINES_DEPENDENCY]-&gt;(repository),
+ (service)-[s2:DEFINES_DEPENDENCY]-&gt;(model),
+ (repository)-[r1:DEFINES_DEPENDENCY]-&gt;(model)
+RETURN
+  *</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Status: Not Available</p>
+</div>
+<div class="paragraph">
+<p><a href="graphml/layer_LayerDependencyDefinition.graphml">GraphML Report</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_constraints">5.2. Constraints</h3>
+<div id="layer:LayerDependencyViolation" class="listingblock constraint">
+<div class="title">There must be no dependencies between layers that are not explicitly defined.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (layer1:Layer)-[:DEPENDS_ON]-&gt;(layer2:Layer)
+WHERE NOT
+  (layer1)-[:DEFINES_DEPENDENCY]-&gt;(layer2)
+WITH
+  layer1, layer2
+MATCH
+  (layer1)-[:CONTAINS*]-&gt;(type1:Type),
+  (layer2)-[:CONTAINS*]-&gt;(type2:Type),
+  (type1)-[:DEPENDS_ON]-&gt;(type2)
+RETURN
+  layer1.name as Layer, type1 as Type, layer2.name as LayerDependency, type2 as TypeDependency</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(layer:LayerDependencyViolation)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reports_3">5.3. Reports</h3>
+<div id="layer:LayerDependencyDiagram" class="listingblock concept">
+<div class="title">Creates a diagram about dependencies between layers.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (layer:Layer)
+OPTIONAL MATCH
+  (layer)-[dependsOn:DEPENDS_ON]-&gt;(:Layer)
+RETURN
+  *</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(layer:LayerDependencyDiagram)">
+<div><a href="layer_LayerDependencyDiagram.svg"><img src="layer_LayerDependencyDiagram.svg"/></a></div>
+</div></p>
+</div>
+<div id="layer:LayerDependency.graphml" class="listingblock concept">
+<div class="title">Creates a GraphML report about dependencies between layers and their contained types.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (layer:Layer:Package)-[:CONTAINS*]-&gt;(type:Type)
+OPTIONAL MATCH
+  (type)-[dependsOn:DEPENDS_ON]-&gt;(:Type)
+RETURN {
+  role : &quot;graph&quot;,
+  parent : layer,
+  nodes : collect(type),
+  relationships : collect(dependsOn)
+} as TypesPerLayer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Status: Not Available</p>
+</div>
+<div class="paragraph">
+<p><a href="graphml/layer_LayerDependency.graphml">GraphML Report</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 group">
+<h2 id="spring-component:Default">6. Spring Components</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following constraints are verified:</p>
@@ -618,16 +1402,25 @@ rendering of embedded diagrams <a href="http://www.graphviz.org">Graphviz</a> ne
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#structure:ControllerDependencies">A controller can only have dependencies to services (e.g. direct usage of repositories is not allowed).</a></p>
+<p><a href="#spring-component:ControllerDependencies">A controller can only have dependencies to services (e.g. direct usage of repositories is not allowed).</a></p>
 </li>
 <li>
-<p><a href="#structure:ServiceDependencies">A service can only have dependencies to repositories or other services (e.g. usage of controllers is not allowed).</a></p>
+<p><a href="#spring-component:ControllerMustBeLocatedInWebLayer">A controller must be located in the layer named 'web'.</a></p>
 </li>
 <li>
-<p><a href="#structure:RepositoryDependencies">A repository can only have dependencies to other repositories.</a></p>
+<p><a href="#spring-component:ServiceDependencies">A service can only have dependencies to repositories or other services (e.g. usage of controllers is not allowed).</a></p>
 </li>
 <li>
-<p><a href="#structure:ImplementationDependencies">There must be no direct dependencies between Spring component implementations, i.e. only dependencies to interfaces are allowed.</a></p>
+<p><a href="#spring-component:ServiceMustBeLocatedInServiceLayer">A service must be located in the layer named 'service'.</a></p>
+</li>
+<li>
+<p><a href="#spring-component:RepositoryDependencies">A repository can only have dependencies to other repositories.</a></p>
+</li>
+<li>
+<p><a href="#spring-component:RepositoryMustBeLocatedInRepositoryLayer">A repository must be located in the layer named 'repository'.</a></p>
+</li>
+<li>
+<p><a href="#spring-component:ImplementationDependencies">There must be no direct dependencies between Spring component implementations, i.e. only dependencies to interfaces are allowed.</a></p>
 </li>
 <li>
 <p>Package cycles</p>
@@ -640,21 +1433,18 @@ rendering of embedded diagrams <a href="http://www.graphviz.org">Graphviz</a> ne
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#structure:LayerDependencies.graphml">Actual usage dependencies between the application layers, i.e. controller, service and repository implementations.</a></p>
-</li>
-<li>
-<p><a href="#structure:PackageDependencies.graphml">Dependencies between packages and their contained types.</a></p>
+<p><a href="#spring-component:ComponentDependencies.graphml">Actual usage dependencies between Spring components, i.e. controller, service and repository implementations.</a></p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_layers_and_elements">2.1. Layers And Elements</h3>
+<h3 id="_overview">6.1. Overview</h3>
 <div class="paragraph">
-<p>The application consists of the following layers:</p>
+<p>The application consists of the following components:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/class-diagram.png" alt="class diagram" width="627" height="573"/>
+<img src="class-diagram.png" alt="class diagram" width="626" height="572">
 </div>
 </div>
 <div class="ulist">
@@ -706,13 +1496,13 @@ rendering of embedded diagrams <a href="http://www.graphviz.org">Graphviz</a> ne
 </div>
 </div>
 <div class="sect2">
-<h3 id="_constraints">2.2. Constraints</h3>
+<h3 id="_constraints_2">6.2. Constraints</h3>
 <div class="paragraph">
-<p>The following sections describe restrictions on dependencies between these layers.</p>
+<p>The following sections describe restrictions on dependencies between these components.</p>
 </div>
 <div class="sect3">
-<h4 id="_general">2.2.1. General</h4>
-<div id="structure:ImplementationDependencies" class="listingblock constraint">
+<h4 id="_general">6.2.1. General</h4>
+<div id="spring-component:ImplementationDependencies" class="listingblock constraint">
 <div class="title">There must be no direct dependencies between Spring component implementations, i.e. only dependencies to interfaces are allowed.</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
@@ -724,9 +1514,27 @@ RETURN DISTINCT
   type as Dependent, otherType as InvalidDependency</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-component:ImplementationDependencies)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_ui">2.2.2. UI</h4>
+<h4 id="_ui">6.2.2. UI</h4>
 <div class="paragraph">
 <p>The server side UI implementation is based on Spring MVC controllers:</p>
 </div>
@@ -750,7 +1558,7 @@ RETURN DISTINCT
 }</code></pre>
 </div>
 </div>
-<div id="structure:ControllerDependencies" class="listingblock constraint">
+<div id="spring-component:ControllerDependencies" class="listingblock constraint">
 <div class="title">A controller can only have dependencies to services (e.g. direct usage of repositories is not allowed).</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
@@ -761,9 +1569,56 @@ RETURN DISTINCT
   type as InvalidController, otherType as Dependency</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-component:ControllerDependencies)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="spring-component:ControllerMustBeLocatedInWebLayer" class="listingblock constraint">
+<div class="title">A controller must be located in the layer named 'web'.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (controller:Spring:Controller)
+WHERE NOT
+  (:Layer{name:&quot;web&quot;})-[:CONTAINS*]-&gt;(controller)
+RETURN
+  controller as Controller</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-component:ControllerMustBeLocatedInWebLayer)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_logic">2.2.3. Logic</h4>
+<h4 id="_logic">6.2.3. Logic</h4>
 <div class="paragraph">
 <p>The business logic consists of services which are defined by interfaces and implemented by classes annotated with @Service:</p>
 </div>
@@ -790,7 +1645,7 @@ RETURN DISTINCT
 }</code></pre>
 </div>
 </div>
-<div id="structure:ServiceDependencies" class="listingblock constraint">
+<div id="spring-component:ServiceDependencies" class="listingblock constraint">
 <div class="title">A service can only have dependencies to repositories or other services (e.g. usage of controllers is not allowed).</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
@@ -803,9 +1658,56 @@ RETURN DISTINCT
   type as InvalidService, otherType as Dependency</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-component:ServiceDependencies)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="spring-component:ServiceMustBeLocatedInServiceLayer" class="listingblock constraint">
+<div class="title">A service must be located in the layer named 'service'.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (service:Spring:Service)
+WHERE NOT
+  (:Layer{name:&quot;service&quot;})-[:CONTAINS*]-&gt;(service)
+RETURN
+  service as Service</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-component:ServiceMustBeLocatedInServiceLayer)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_persistence">2.2.4. Persistence</h4>
+<h4 id="_persistence">6.2.4. Persistence</h4>
 <div class="paragraph">
 <p>Repositories provide access to the database and are defined by interfaces (one per model element):</p>
 </div>
@@ -870,7 +1772,7 @@ RETURN DISTINCT
     }</code></pre>
 </div>
 </div>
-<div id="structure:RepositoryDependencies" class="listingblock constraint">
+<div id="spring-component:RepositoryDependencies" class="listingblock constraint">
 <div class="title">A repository can only have dependencies to other repositories.</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
@@ -881,12 +1783,176 @@ RETURN DISTINCT
   type as InvalidRepository, otherType as Dependency</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-component:RepositoryDependencies)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="spring-component:RepositoryMustBeLocatedInRepositoryLayer" class="listingblock constraint">
+<div class="title">A repository must be located in the layer named 'repository'.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (repository:Spring:Repository)
+WHERE NOT
+  (:Layer{name:&quot;repository&quot;})-[:CONTAINS*]-&gt;(repository)
+RETURN
+  repository as Repository</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-component:RepositoryMustBeLocatedInRepositoryLayer)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_concepts">2.3. Concepts</h3>
-<div id="structure:LayerDependencies" class="listingblock concept">
-<div class="title">Creates a USES relation between application layer items, i.e. spring components.</div>
+<h3 id="_concepts_3">6.3. Concepts</h3>
+<div id="spring-component:Component" class="listingblock concept">
+<div class="title">Reports all Spring components.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (component:Spring:Component)
+RETURN
+  component as Component</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-component:Component)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.CrashController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitController
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="spring-component:ComponentDependencies" class="listingblock concept">
+<div class="title">Creates a USES relation between Spring components.</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
   (type:Spring:Component)-[:DECLARES]-&gt;(:Method)-[:INVOKES]-&gt;(:Method)&lt;-[:DECLARES]-(:Type:Interface)&lt;-[:IMPLEMENTS|EXTENDS*]-(otherType:Spring:Component)
@@ -898,24 +1964,91 @@ RETURN
   type as Dependent, collect(distinct otherType.fqn) as Dependencies</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-component:ComponentDependencies)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
 </div>
-<div class="sect2">
-<h3 id="_reports">2.4. Reports</h3>
-<div class="admonitionblock tip">
 <table>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Tip</div>
+<th>Dependent</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitController
 </td>
-<td class="content">
-GraphML reports may be viewed using <a href="http://www.yworks.com/en/products/yfiles/yed/">yEd</a>. After opening a file you
-should apply a layout, e.g. <span class="menuseq"><span class="menu">Layout</span>&#160;&#9656; <span class="menuitem">Hierarchical</span></span>.
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
 </td>
 </tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetController
+</td>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetController
+</td>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerController
+</td>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl
+</td>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl
+org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl
+org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository
+org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl
+org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository
+org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl
+org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository
+org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl
+org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository
+</td>
+</tr>
+</tbody>
 </table>
+
+</div></p>
 </div>
-<div id="structure:LayerDependencies.graphml" class="listingblock concept">
-<div class="title">Actual usage dependencies between the application layers, i.e. controller, service and repository implementations.</div>
+</div>
+<div class="sect2">
+<h3 id="_reports_4">6.4. Reports</h3>
+<div id="spring-component:ComponentDependencies.graphml" class="listingblock concept">
+<div class="title">Actual usage dependencies between Spring components, i.e. controller, service and repository implementations.</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
   (type:Spring:Component)-[uses:USES]-&gt;(otherType:Spring:Component)
@@ -925,26 +2058,17 @@ RETURN
   otherType as Dependency</code></pre>
 </div>
 </div>
-<div id="structure:PackageDependencies.graphml" class="listingblock concept">
-<div class="title">Dependencies between packages and their contained types.</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
-  (package:Package)-[:CONTAINS]-&gt;(type:Type)
-OPTIONAL MATCH
-  (type)-[dependsOn:DEPENDS_ON]-&gt;(:Type)
-RETURN {
-  role : &quot;graph&quot;,
-  parent : package,
-  nodes : collect(type),
-  relationships : collect(dependsOn)
-} as TypesPerPackage</code></pre>
+<div class="paragraph">
+<p>Status: Not Available</p>
 </div>
+<div class="paragraph">
+<p><a href="graphml/spring-component_ComponentDependencies.graphml">GraphML Report</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1 group">
-<h2 id="model:Default">3. JPA Model</h2>
+<h2 id="model:Default">7. JPA Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following constraints are verified:</p>
@@ -957,7 +2081,7 @@ RETURN {
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_constraints_2">3.1. Constraints</h3>
+<h3 id="_constraints_3">7.1. Constraints</h3>
 <div id="model:JpaEntityInModelPackage" class="listingblock constraint">
 <div class="title">All JPA entities must be located in packages named "model".</div>
 <div class="content">
@@ -969,11 +2093,234 @@ RETURN
   entity AS EntityInWrongPackage</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(model:JpaEntityInModelPackage)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1 group">
-<h2 id="management:Default">4. Management</h2>
+<h2 id="business:Default">8. Business</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the application from the business' perspective.</p>
+</div>
+<div class="sect2">
+<h3 id="_concepts_4">8.1. Concepts</h3>
+<div class="paragraph">
+<p>The Spring PetClinic application consists of several business sub domains that can be identified by naming conventions.</p>
+</div>
+<div id="business:Subdomain" class="listingblock concept">
+<div class="title">Creates predefined Subdomain nodes and connects them to all Type nodes via naming conventions.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">UNWIND [
+    { name: &quot;Clinic&quot; },
+    { name: &quot;Owner&quot; },
+    { name: &quot;Person&quot; },
+    { name: &quot;Pet&quot; },
+    { name: &quot;Specialty&quot; },
+    { name: &quot;Vet&quot; },
+    { name: &quot;Visit&quot; }
+]
+AS properties
+MERGE (s:Subdomain{name:properties.name})
+WITH s
+    MATCH (t:Type)
+        WHERE t.name CONTAINS s.name
+    MERGE (t)-[:BELONGS_TO]-&gt;(s)
+RETURN s.name as Subdomain, COUNT(t) as Types</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(business:Subdomain)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Subdomain</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Visit
+</td>
+<td>
+9
+</td>
+</tr>
+<tr>
+<td>
+Person
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+Specialty
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+Clinic
+</td>
+<td>
+6
+</td>
+</tr>
+<tr>
+<td>
+Vet
+</td>
+<td>
+9
+</td>
+</tr>
+<tr>
+<td>
+Owner
+</td>
+<td>
+7
+</td>
+</tr>
+<tr>
+<td>
+Pet
+</td>
+<td>
+17
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div class="paragraph">
+<p>There are dependencies between business sub domains.</p>
+</div>
+<div id="business:SubdomainDependency" class="listingblock concept">
+<div class="title">Creates DEPENDS_ON relations between two subdomains if there are Java type dependencies between them.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (t1:Type)-[:BELONGS_TO]-&gt;(s1:Subdomain),
+  (t2:Type)-[:BELONGS_TO]-&gt;(s2:Subdomain),
+  (t1)-[d:DEPENDS_ON]-&gt;(t2)
+WHERE
+  s1 &lt;&gt; s2
+WITH
+  s1, s2, count(d) as weight
+MERGE
+  (s1)-[d:DEPENDS_ON]-&gt;(s2)
+SET
+  d.weight = weight
+RETURN
+  s1.name as Subdomain, collect(s2.name) as Dependencies
+ORDER BY
+  Subdomain</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(business:SubdomainDependency)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Subdomain</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Clinic
+</td>
+<td>
+Visit
+Specialty
+Owner
+Pet
+Vet
+</td>
+</tr>
+<tr>
+<td>
+Owner
+</td>
+<td>
+Clinic
+Person
+Visit
+Pet
+</td>
+</tr>
+<tr>
+<td>
+Pet
+</td>
+<td>
+Owner
+Clinic
+Visit
+</td>
+</tr>
+<tr>
+<td>
+Vet
+</td>
+<td>
+Specialty
+Person
+Clinic
+</td>
+</tr>
+<tr>
+<td>
+Visit
+</td>
+<td>
+Clinic
+Pet
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 group">
+<h2 id="management:Default">9. Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following reports are created:</p>
@@ -986,7 +2333,7 @@ RETURN
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_reports_2">4.1. Reports</h3>
+<h3 id="_reports_5">9.1. Reports</h3>
 <div id="management:ManagedResources" class="listingblock concept">
 <div class="title">All managed resources including their attributes and operations.</div>
 <div class="content">
@@ -999,11 +2346,42 @@ RETURN
   managedResource as ManagedResource, collect(member.name) as Member</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(management:ManagedResources)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>ManagedResource</th>
+<th>Member</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect
+</td>
+<td>
+isEnabled
+setEnabled
+reset
+getCallTime
+getCallCount
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1 group">
-<h2 id="test:Default">5. Test Rules</h2>
+<h2 id="test:Default">10. Tests</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following test rules apply:</p>
@@ -1011,16 +2389,26 @@ RETURN
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#assertj:TestMethodWithoutAssertion">All test methods must perform at least one assertion (within a call hierarchy of max. 3 steps).</a></p>
+<p><a href="#test:TestMethodWithoutAssertion">All test methods must perform at least one assertion (within a call hierarchy of max. 3 steps).</a></p>
 </li>
 <li>
 <p>All @Ignore annotations must provide a message</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>The following reports are created:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#test:TestAffectedByLastCommit">[test:TestAffectedByLastCommit]</a></p>
+</li>
+</ul>
+</div>
 <div class="sect2">
-<h3 id="_constraints_3">5.1. Constraints</h3>
-<div id="assertj:TestMethodWithoutAssertion" class="listingblock constraint">
+<h3 id="_constraints_4">10.1. Constraints</h3>
+<div id="test:TestMethodWithoutAssertion" class="listingblock constraint">
 <div class="title">All test methods must perform at least one assertion (within a call hierarchy of max. 3 steps).</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
@@ -1032,61 +2420,139 @@ RETURN
   testMethod AS Method</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(test:TestMethodWithoutAssertion)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 group">
+<h2 id="vcs:Default">11. Version Control System</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The rules defined in this document refer to Git.</p>
 </div>
 <div class="sect2">
-<h3 id="_concepts_2">5.2. Concepts</h3>
+<h3 id="_concepts_5">11.1. Concepts</h3>
+<div id="vcs:CurrentBranch" class="listingblock concept">
+<div class="title">Labels the current branch with <code>Current</code>.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (repository:Repository)-[:HAS_BRANCH]-&gt;(branch:Git:Branch)
+WHERE
+  branch.name starts with &quot;heads/&quot;
+MATCH
+  (repository)-[:HAS_HEAD]-&gt;(head:Git:Commit),
+  (branch)-[:HAS_HEAD]-&gt;(branchHead:Git:Commit),
+   p=shortestPath((branchHead)-[:HAS_PARENT*0..]-&gt;(head))
+SET
+  branch:Current
+RETURN
+  branch.name as CurrentBranch, length(p) as Offset</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>The following framworks are used to verify assertions:</p>
+<p><div id="result(vcs:CurrentBranch)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>AssertJ</p>
-</li>
-<li>
-<p>Spring Web Test</p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>CurrentBranch</th>
+<th>Offset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+heads/master
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
-<div id="assertj:AssertMethod" class="listingblock concept">
-<div class="title">Mark all assertThat methods of 'org.assertj.core.api.Assertions' with "AssertJ" and "Assert".</div>
+</div>
+<div class="sect2">
+<h3 id="_constraints_5">11.2. Constraints</h3>
+<div id="vcs:BranchesMustBeSynchronized" class="listingblock constraint">
+<div class="title">The branches "violations" and "jqa-remote" must include the latest commit (HEAD) of "master" (i.e. merges are required).</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cypher">MATCH
-  (assertType:Type)-[:DECLARES]-&gt;(assertMethod)
+  (master:Branch),
+  (branch:Branch)
 WHERE
-  assertType.fqn = 'org.assertj.core.api.Assertions'
-  and assertMethod.signature =~ '.* assertThat.*'
-SET
-  assertMethod:AssertJ:Assert
-RETURN
-  assertMethod</code></pre>
-</div>
-</div>
-<div id="spring-test-web:Assert" class="listingblock concept">
-<div class="title">Mark method "org.springframework.test.web.servlet.ResultActions#andExpect" as "Spring" and "Assert".</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
-  (assertType:Type)-[:DECLARES]-&gt;(assertMethod)
+  master.name = &quot;heads/master&quot;
+  and branch.name in [
+    &quot;heads/violations&quot;,
+    &quot;heads/jqa-remote&quot;,
+    &quot;heads/testimpactanalysis&quot;
+  ]
+WITH
+  master, branch
+MATCH
+  (master)-[:HAS_HEAD]-&gt;(masterHead:Commit),
+  (branch)-[:HAS_HEAD]-&gt;(branchHead:Commit)
+OPTIONAL MATCH
+  p=shortestPath((branchHead)-[:HAS_PARENT*]-&gt;(masterHead))
+WITH
+  master, branch, p
 WHERE
-  assertType.fqn = 'org.springframework.test.web.servlet.ResultActions'
-  and assertMethod.signature =~ '.* andExpect.*'
-SET
-  assertMethod:Spring:Assert
+  p is null
 RETURN
-  assertMethod</code></pre>
+  branch.name as OutdatedBranch</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><div id="result(vcs:BranchesMustBeSynchronized)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spring_mvc_rules">6. Spring MVC Rules</h2>
+<h2 id="_spring_mvc_rules">12. Spring MVC Rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document defines concepts related to the Spring MVC Framework.</p>
 </div>
 <div class="sect2">
-<h3 id="_concepts_3">6.1. Concepts</h3>
+<h3 id="_concepts_6">12.1. Concepts</h3>
 <div id="spring-mvc:Service" class="listingblock concept">
 <div class="title">Labels all types annotated with "org.springframework.stereotype.Service" with "Spring", "Component" and "Service".</div>
 <div class="content">
@@ -1099,6 +2565,29 @@ SET
 RETURN
   service as Service</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-mvc:Service)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.ClinicServiceImpl
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
 <div id="spring-mvc:Controller" class="listingblock concept">
 <div class="title">Labels all types annotated with "org.springframework.stereotype.Controller" with "Spring", "Component" and "Controller".</div>
@@ -1113,17 +2602,60 @@ RETURN
   controller as Controller</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-mvc:Controller)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Controller</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.CrashController
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerController
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spring_data_rules">7. Spring Data Rules</h2>
+<h2 id="_spring_data_rules">13. Spring Data Rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document defines concepts related to the Spring Data Framework.</p>
 </div>
 <div class="sect2">
-<h3 id="_concepts_4">7.1. Concepts</h3>
+<h3 id="_concepts_7">13.1. Concepts</h3>
 <div id="spring-data:Repository" class="listingblock concept">
 <div class="title">Returns all repositories.</div>
 <div class="content">
@@ -1132,6 +2664,84 @@ RETURN
 RETURN
   repository as Repository</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-data:Repository)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
 <div id="spring-data:AnnotatedRepository" class="listingblock concept">
 <div class="title">Labels all types annotated with "org.springframework.stereotype.Repository" with "Spring", "Component" and "Repository".</div>
@@ -1145,6 +2755,64 @@ SET
 RETURN
   repository as Repository</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-data:AnnotatedRepository)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaOwnerRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa.JpaVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVisitRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcVetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcPetRepositoryImpl
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc.JdbcOwnerRepositoryImpl
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
 <div id="spring-data:ImplementedRepository" class="listingblock concept">
 <div class="title">Labels all types implementing "org.springframework.data.repository.Repository" with "Spring", "Component" and "Repository".</div>
@@ -1161,17 +2829,55 @@ RETURN
   repository as Repository</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-data:ImplementedRepository)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVetRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataVisitRepository
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa.SpringDataOwnerRepository
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spring_jmx_rules">8. Spring JMX Rules</h2>
+<h2 id="_spring_jmx_rules">14. Spring JMX Rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document defines concepts related to the Spring JMX Framework.</p>
 </div>
 <div class="sect2">
-<h3 id="_concepts_5">8.1. Concepts</h3>
+<h3 id="_concepts_8">14.1. Concepts</h3>
 <div id="spring-jmx:ManagedResource" class="listingblock concept">
 <div class="title">Labels all types annotated with "org.springframework.jmx.export.annotation.ManagedResource" with "Spring" and "ManagedResource".</div>
 <div class="content">
@@ -1184,6 +2890,29 @@ SET
 RETURN
   managedResource as ManagedResource</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-jmx:ManagedResource)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>ManagedResource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
 <div id="spring-jmx:ManagedAttribute" class="listingblock concept">
 <div class="title">Labels all methods annotated with "org.springframework.jmx.export.annotation.ManagedAttribute" with "Spring" and "ManagedAttribute".</div>
@@ -1198,6 +2927,44 @@ RETURN
   managedAttribute as ManagedAttribute</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-jmx:ManagedAttribute)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>ManagedAttribute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect#void setEnabled(boolean)
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect#boolean isEnabled()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect#long getCallTime()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect#int getCallCount()
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
 <div id="spring-jmx:ManagedOperation" class="listingblock concept">
 <div class="title">Labels all methods annotated with "org.springframework.jmx.export.annotation.ManagedAttribute" with "Spring" and "ManagedOperation".</div>
 <div class="content">
@@ -1211,13 +2978,627 @@ RETURN
   managedOperation as ManagedOperation</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><div id="result(spring-jmx:ManagedOperation)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>ManagedOperation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.util.CallMonitoringAspect#void reset()
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spring_test_framework">15. Spring Test Framework</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_concepts_9">15.1. Concepts</h3>
+<div id="spring-test-web:Assert" class="listingblock concept">
+<div class="title">Mark method "org.springframework.test.web.servlet.ResultActions#andExpect" as "Spring" and "Assert".</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (assertType:Type)-[:DECLARES]-&gt;(assertMethod)
+WHERE
+  assertType.fqn = 'org.springframework.test.web.servlet.ResultActions'
+  and assertMethod.signature =~ '.* andExpect.*'
+SET
+  assertMethod:Spring:Assert
+RETURN
+  assertMethod</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(spring-test-web:Assert)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>assertMethod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.test.web.servlet.ResultActions#org.springframework.test.web.servlet.ResultActions andExpect(org.springframework.test.web.servlet.ResultMatcher)
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_assertj">16. AssertJ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_concepts_10">16.1. Concepts</h3>
+<div id="assertj:AssertMethod" class="listingblock concept">
+<div class="title">Mark all assertThat methods of 'org.assertj.core.api.Assertions' with "AssertJ" and "Assert".</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (assertType:Type)-[:DECLARES]-&gt;(assertMethod)
+WHERE
+  assertType.fqn = 'org.assertj.core.api.Assertions'
+  and assertMethod.signature =~ '.* assertThat.*'
+SET
+  assertMethod:AssertJ:Assert
+RETURN
+  assertMethod</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(assertj:AssertMethod)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>assertMethod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractObjectAssert assertThat(java.lang.Object)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractBooleanAssert assertThat(boolean)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractCharSequenceAssert assertThat(java.lang.String)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractIntegerAssert assertThat(int)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractComparableAssert assertThat(java.lang.Comparable)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractIntegerAssert assertThat(java.lang.Integer)
+</td>
+</tr>
+<tr>
+<td>
+org.assertj.core.api.Assertions#org.assertj.core.api.AbstractLongAssert assertThat(long)
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_imported_rules">17. Imported Rules</h2>
+<div class="sectionbody">
+<div id="dependency:Package" class="listingblock concept">
+<div class="title">Creates a DEPENDS_ON relationship between a packages if there are type dependencies between them.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+    (p1:Package)-[:CONTAINS]-&gt;(t1:Type)-[:DEPENDS_ON]-&gt;(t2:Type)&lt;-[:CONTAINS]-(p2:Package)
+WHERE
+    p1&lt;&gt;p2
+CREATE UNIQUE
+    (p1)-[:DEPENDS_ON]-&gt;(p2)
+RETURN
+    p1 AS package, COUNT(DISTINCT p2) AS PackageDependencies</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(dependency:Package)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>PackageDependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.springdatajpa
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.util
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jpa
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.repository.jdbc
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web
+</td>
+<td>
+3
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="dependency:PackageCycles" class="listingblock constraint">
+<div class="title">There must be no cyclic package dependencies.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+    (p1:Package)-[:DEPENDS_ON]-&gt;(p2:Package),
+    path=shortestPath((p2)-[:DEPENDS_ON*]-&gt;(p1))
+WHERE
+    p1&lt;&gt;p2
+RETURN
+    p1 AS Package, EXTRACT(p IN nodes(path) | p.fqn) AS Cycle
+ORDER BY
+    Package.fqn</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(dependency:PackageCycles)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="jpa2:Entity" class="listingblock concept">
+<div class="title">Labels all types annotated with @javax.persistence.Entity with "Jpa" and "Entity".</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (t:Type)-[:ANNOTATED_BY]-&gt;()-[:OF_TYPE]-&gt;(a:Type)
+WHERE
+  a.fqn=&quot;javax.persistence.Entity&quot;
+SET
+  t:Jpa:Entity
+RETURN
+  t AS JpaEntity</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(jpa2:Entity)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>JpaEntity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.Visit
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.Pet
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.Specialty
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.Vet
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.PetType
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.Owner
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="junit4:IgnoreWithoutMessage" class="listingblock constraint">
+<div class="title">All @Ignore annotations must provide a message.</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (e)-[:ANNOTATED_BY]-&gt;(ignore:Annotation)-[:OF_TYPE]-&gt;(ignoreType:Type)
+WHERE
+  ignoreType.fqn= &quot;org.junit.Ignore&quot;
+  AND NOT (ignore)-[:HAS]-&gt;(:Value{name:&quot;value&quot;})
+RETURN
+  e AS IgnoreWithoutMessage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(junit4:IgnoreWithoutMessage)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MAJOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Empty Result</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div></p>
+</div>
+<div id="junit4:TestMethod" class="listingblock concept">
+<div class="title">Finds all test methods (i.e. annotated with "@org.junit.Test") and labels them with "Test" and             "Junit4".</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cypher">MATCH
+  (m:Method)-[:ANNOTATED_BY]-()-[:OF_TYPE]-&gt;(a:Type)
+WHERE
+  a.fqn=&quot;org.junit.Test&quot;
+SET
+  m:Test:Junit4
+RETURN
+  m AS Test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><div id="result(junit4:TestMethod)">
+<div>
+Status: <span class="green">SUCCESS</span>
+Severity: MINOR
+</div>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitControllerTests#void testProcessNewVisitFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitControllerTests#void testProcessNewVisitFormHasErrors()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitControllerTests#void testShowVisits()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VisitControllerTests#void testInitNewVisitForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testProcessUpdateFormHasErrors()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testProcessUpdateFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testInitUpdateForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testProcessCreationFormHasErrors()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testProcessCreationFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetControllerTests#void testInitCreationForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetControllerTests#void testShowVetListHtml()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetControllerTests#void testShowResourcesVetList()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.VetControllerTests#void testShowVetListXml()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetTypeFormatterTests#void testPrint()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetTypeFormatterTests#void shouldParse()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.PetTypeFormatterTests#void shouldThrowParseException()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testInitCreationForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessCreationFormHasErrors()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessCreationFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.CrashControllerTests#void testTriggerException()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessUpdateOwnerFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessUpdateOwnerFormHasErrors()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testShowOwner()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testInitFindForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessFindFormSuccess()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessFindFormByLastName()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testProcessFindFormNoOwnersFound()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.web.OwnerControllerTests#void testInitUpdateOwnerForm()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindSingleOwnerWithPet()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindOwnersByLastName()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.model.ValidatorTests#void shouldNotValidateWhenFirstNameEmpty()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindVisitsByPetId()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldAddNewVisitForPet()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindVets()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldUpdatePetName()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldInsertPetIntoDatabaseAndGenerateId()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindAllPetTypes()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldFindPetWithCorrectId()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldInsertOwner()
+</td>
+</tr>
+<tr>
+<td>
+org.springframework.samples.petclinic.service.AbstractClinicServiceTests#void shouldUpdateOwner()
+</td>
+</tr>
+</tbody>
+</table>
+
+</div></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-16 09:15:37 MEZ
+Last updated 2017-10-27 21:30:55 MESZ
 </div>
 </div>
 </body>
