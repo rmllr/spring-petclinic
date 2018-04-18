@@ -1,5 +1,5 @@
 [[spring:Default]]
-[role=group,includesGroup="spring:Default",includesConstraints="spring:ControllerMustBeLocatedInWebLayer,spring:ServiceMustBeLocatedInServiceLayer,spring:RepositoryMustBeLocatedInRepositoryLayer,spring:ImplementationDependencies,dependency:PackageCycles",includesConcepts="spring:VirtualDependency.graphml"]
+[role=group,includesGroups="spring-boot:Strict",includesConstraints="spring:ControllerMustBeLocatedInWebLayer,spring:ServiceMustBeLocatedInServiceLayer,spring:RepositoryMustBeLocatedInRepositoryLayer,spring:ImplementationDependencies,dependency:PackageCycles",includesConcepts="spring:VirtualDependency.graphml"]
 == Spring Components
 
 The following constraints are verified:
