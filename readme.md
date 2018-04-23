@@ -1,222 +1,82 @@
-# Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=master)](https://travis-ci.org/spring-projects/spring-petclinic/)
+# Spring PetClinic Sample Application with integrated jQAssistant
 
-## Understanding the Spring Petclinic application with a few diagrams
-<a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
+With this software project, we demonstrate the usage of [jQAssistant](https://jqassistant.org/) and [Neo4j](https://neo4j.com/).
 
-## Running petclinic locally
+We've integrated jQAssistant in the Maven build of the [Spring PetClinic sample application](https://github.com/spring-projects/spring-petclinic). By doing this, jQAssistant scans various software structures (Java ByteCode, Git commits, JUnit test results and so on) during the build process and stores this information into the Neo4j graph database.
+
+This README shows you, how you can setup this software project by yourself. If you want to integrated jQAssistant in your own project, take a look at [out 101 guide](https://101.jqassistant.org/integrating-jqa-maven-plugin/readme.html)).
+
+## Prerequisites
+
+### Minimum requirements
+* Oracle Java Development Kit with Version >=8 ([download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+* Git ([download](https://git-scm.com/downloads))
+
+### Optional
+* To produce nice looking diagrams, install GraphViz ([download](https://www.graphviz.org/download/))
+
+## Installing and getting to know the sample application
+_Hint: Preferable, you use the Git bash command line or any Unix-like shell for these tasks._
+
+### Understanding the Spring Petclinic application with a few diagrams
+The sample application itself is a simple demo for organizing visits of pet owners to vets in a clinic.
+
+* See the presentation on SpeakerDeck: https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application
+* Find a running web application here: https://stagemonitor-demo.isys-software.de/
+
+### Downloading and running the `petclinic` web application
+First, we want to download the source code of the application with Git, build it with Maven (using `mvnw`) and running the embedded web application server `tomcat7`:
 ```
-	git clone https://github.com/spring-projects/spring-petclinic.git
-	cd spring-petclinic
-	./mvnw tomcat7:run
+git clone https://github.com/buschmais/spring-petclinic.git
+cd spring-petclinic
+./mvnw clean install
+./mvnw tomcat7:run
 ```
+You can then access the `petclinic` web application with your browser here: http://localhost:9966/petclinic/
 
-You can then access petclinic here: http://localhost:9966/petclinic/
+This is what it looks like:
 
-## In case you find a bug/suggested improvement for Spring Petclinic
-Our issue tracker is available here: https://github.com/spring-projects/spring-petclinic/issues
+![](docs/screenshots/petclinic_start.png)
+
+To shutdown the server, press `Ctrl` + `c` on the command line.
 
 
-## Database configuration
+## Running jQAssistant / Neo4j locally 
 
-In its default configuration, Petclinic uses an in-memory database (HSQLDB) which
-gets populated at startup with data. A similar setup is provided for MySql in case a persistent database configuration is needed.
-Note that whenever the database type is changed, the data-access.properties file needs to be updated and the mysql-connector-java artifact from the pom.xml needs to be uncommented.
-
-You may start a MySql database with docker:
-
+After shutting down the web application server, you can start jQAssistant's embedded Neo4j database server with this Maven command:
 ```
-docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
+./mvnw jqassistant:server
 ```
+You should see the following on the command line:
 
-## Working with Petclinic in Eclipse/STS
+![](docs/screenshots/mvn_jqassistant_start.png)
 
-### prerequisites
-The following items should be installed in your system:
-* Maven 3 (http://www.sonatype.com/books/mvnref-book/reference/installation.html)
-* git command line tool (https://help.github.com/articles/set-up-git)
-* Eclipse with the m2e plugin (m2e is installed by default when using the STS (http://www.springsource.org/sts) distribution of Eclipse)
+You can then access the Neo4j browser frontend with the scanned data here: http://localhost:7474
 
-Note: when m2e is available, there is an m2 icon in Help -> About dialog.
-If m2e is not there, just follow the install process here: http://eclipse.org/m2e/download/
+This is what it should look like after clicking the button in the upper left corner (symbol may differ):
 
+![](docs/screenshots/neo4j_start.png)
 
-### Steps:
+## Next steps
 
-1) In the command line
+Next, you can click on the various labels in the drawer to explore the scanned software data. You can also use the Neo4j guide for jQAssistant (beta) by executing the following command
 ```
-git clone https://github.com/spring-projects/spring-petclinic.git
+:play http://guides.neo4j.com/jqassistant
 ```
-2) Inside Eclipse
-```
-File -> Import -> Maven -> Existing Maven project
-```
+or by simply clicking this link: http://localhost:7474/browser?cmd=play&arg=http://guides.neo4j.com/jqassistant. The guide will show you some first steps with jQAssistant/Neo4j.
+
+More information e. g. about the scanned Java code can be found in the documentation of jQAssistant: http://buschmais.github.io/jqassistant/doc/1.3.0/#_java_plugin.
 
 
-## Looking for something in particular?
+## Taking a look at the self-validating, living architecture documentation
+After the build, you can find the complete architecture documentation in `target/html/index.html`. The documentation is written in [AsciiDoc](http://asciidoc.org/) and  
+* defines the architecture rules in plain text
+* translates those rules into Cypher (Neo4j's query language)
+* validates the rules by executing the Cypher queries against the actual software
+* reports the results back directly into the document.
 
-<table>
-  <tr>
-    <th width="300px">Java Config</th><th width="300px"></th>
-  </tr>
-  <tr>
-    <td>Java Config branch</td>
-    <td>
-      Petclinic uses XML configuration by default. In case you'd like to use Java Config instead, there is a Java Config branch available <a href="https://github.com/spring-projects/spring-petclinic/tree/javaconfig">here</a>. Thanks to Antoine Rey for his contribution.     
-    </td>
-  </tr>
-  <tr>
-    <th width="300px">Inside the 'Web' layer</th><th width="300px">Files</th>
-  </tr>
-  <tr>
-    <td>Spring MVC - XML integration</td>
-    <td><a href="/src/main/resources/spring/mvc-view-config.xml">mvc-view-config.xml</a></td>
-  </tr>
-  <tr>
-    <td>Spring MVC - ContentNegotiatingViewResolver</td>
-    <td><a href="/src/main/resources/spring/mvc-view-config.xml">mvc-view-config.xml</a></td>
-  </tr>
-  <tr>
-    <td>JSP custom tags</td>
-    <td>
-      <a href="/src/main/webapp/WEB-INF/tags">WEB-INF/tags</a>
-      <a href="/src/main/webapp/WEB-INF/jsp/owners/createOrUpdateOwnerForm.jsp">createOrUpdateOwnerForm.jsp</a></td>
-  </tr>
-  <tr>
-    <td>Bower</td>
-    <td>
-      <a href="/pom.xml">bower-install maven profile declaration inside pom.xml</a> <br />
-      <a href="/bower.json">JavaScript libraries are defined by the manifest file bower.json</a> <br />
-      <a href="/.bowerrc">Bower configuration using JSON</a> <br />
-      <a href="/src/main/resources/spring/mvc-core-config.xml#L30">Resource mapping in Spring configuration</a> <br />
-      <a href="/src/main/webapp/WEB-INF/jsp/fragments/staticFiles.jsp#L12">sample usage in JSP</a></td>
-    </td>
-  </tr>
-  <tr>
-    <td>Dandelion-datatables</td>
-    <td>
-      <a href="/src/main/webapp/WEB-INF/jsp/owners/ownersList.jsp">ownersList.jsp</a> 
-      <a href="/src/main/webapp/WEB-INF/jsp/vets/vetList.jsp">vetList.jsp</a> 
-      <a href="/src/main/java/org/springframework/samples/petclinic/PetclinicInitializer.java">PetclinicInitializer.java</a>
-      <a href="/src/main/resources/dandelion/datatables/datatables.properties">datatables.properties</a> 
-   </td>
-  </tr>
-  <tr>
-    <td>Thymeleaf branch</td>
-    <td>
-      <a href="http://www.thymeleaf.org/petclinic.html">See here</a></td>
-  </tr>
-  <tr>
-    <td>Branch using GemFire and Spring Data GemFire instead of ehcache (thanks Bijoy Choudhury)</td>
-    <td>
-      <a href="https://github.com/bijoych/spring-petclinic-gemfire">See here</a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th width="300px">'Service' and 'Repository' layers</th><th width="300px">Files</th>
-  </tr>
-  <tr>
-    <td>Transactions</td>
-    <td>
-      <a href="/src/main/resources/spring/business-config.xml">business-config.xml</a>
-       <a href="/src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java">ClinicServiceImpl.java</a>
-    </td>
-  </tr>
-  <tr>
-    <td>Cache</td>
-      <td>
-      <a href="/src/main/resources/spring/tools-config.xml">tools-config.xml</a>
-       <a href="/src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java">ClinicServiceImpl.java</a>
-    </td>
-  </tr>
-  <tr>
-    <td>Bean Profiles</td>
-      <td>
-      <a href="/src/main/resources/spring/business-config.xml">business-config.xml</a>
-       <a href="/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceJdbcTests.java">ClinicServiceJdbcTests.java</a>
-       <a href="/src/main/java/org/springframework/samples/petclinic/PetclinicInitializer.java">PetclinicInitializer.java</a>
-    </td>
-  </tr>
-  <tr>
-    <td>JdbcTemplate</td>
-    <td>
-      <a href="/src/main/resources/spring/business-config.xml">business-config.xml</a>
-      <a href="/src/main/java/org/springframework/samples/petclinic/repository/jdbc">jdbc folder</a></td>
-  </tr>
-  <tr>
-    <td>JPA</td>
-    <td>
-      <a href="/src/main/resources/spring/business-config.xml">business-config.xml</a>
-      <a href="/src/main/java/org/springframework/samples/petclinic/repository/jpa">jpa folder</a></td>
-  </tr>
-  <tr>
-    <td>Spring Data JPA</td>
-    <td>
-      <a href="/src/main/resources/spring/business-config.xml">business-config.xml</a>
-      <a href="/src/main/java/org/springframework/samples/petclinic/repository/springdatajpa">springdatajpa folder</a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th width="300px">Others</th><th width="300px">Files</th>
-  </tr>
-    <tr>
-      <td>Spring Boot branch</td>
-      <td>
-        <a href="https://github.com/spring-projects/spring-petclinic/tree/springboot">See here</a></td>
-    </tr>
-  <tr>
-    <td>Gradle branch</td>
-    <td>
-      <a href="https://github.com/whimet/spring-petclinic">See here</a></td>
-  </tr>
-</table>
+Please find more information about the various artifacts in the `/docs` directory or [online](https://buschmais.github.io/spring-petclinic/).
 
 
-## Interaction with other open source projects
-
-One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many Open Source projects. We found some bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
-Here is a list of them:
-
-<table>
-  <tr>
-    <th width="300px">Name</th>
-    <th width="300px"> Issue </th>
-  </tr>
-
-  <tr>
-    <td>Spring JDBC: simplify usage of NamedParameterJdbcTemplate</td>
-    <td> <a href="https://jira.springsource.org/browse/SPR-10256"> SPR-10256</a> and <a href="https://jira.springsource.org/browse/SPR-10257"> SPR-10257</a> </td>
-  </tr>
-  <tr>
-    <td>Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility</td>
-    <td>
-      <a href="https://hibernate.atlassian.net/browse/HV-790"> HV-790</a> and <a href="https://hibernate.atlassian.net/browse/HV-792"> HV-792</a>
-      </td>
-  </tr>
-  <tr>
-    <td>Spring Data: provide more flexibility when working with JPQL queries</td>
-    <td>
-      <a href="https://jira.springsource.org/browse/DATAJPA-292"> DATAJPA-292</a>
-      </td>
-  </tr>  
-  <tr>
-    <td>Eclipse: validation bug when working with .tag/.tagx files (has only been fixed for Eclipse 4.3 (Kepler)). <a href="https://github.com/spring-projects/spring-petclinic/issues/14">See here for more details.</a></td>
-    <td>
-      <a href="https://issuetracker.springsource.com/browse/STS-3294"> STS-3294</a>
-    </td>
-  </tr>    
-</table>
-
-
-# Contributing
-
-The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
-
-For pull requests, editor preferences are available in the [editor config](https://github.com/spring-projects/spring-petclinic/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
-
+  
+Have fun!
